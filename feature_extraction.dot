@@ -1,0 +1,15 @@
+digraph feature_extraction {
+    node [shape=box, style=filled, fillcolor=lightblue]
+    rankdir=LR;
+
+    Start [label="Start"]
+    Extract_Tokens [label="Extract Tokens"]
+    Extract_Tool_Mentions [label="Extract Tool Mentions"]
+    Extract_Location_Info [label="Extract Location Information"]
+    Extract_Other_Features [label="Extract Other Features"]
+
+    Start -> Extract_Tokens
+    Extract_Tokens -> Extract_Tool_Mentions
+    Extract_Tool_Mentions -> Extract_Location_Info
+    Extract_Location_Info -> Extract_Other_Features
+}

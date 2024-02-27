@@ -1,0 +1,11 @@
+digraph api_service {
+    node [shape=box, style=filled, fillcolor=lightblue]
+    rankdir=LR;
+
+    Start [label="Start"]
+    Retrieve_Features [label="Retrieve Extracted Features"]
+    Provide_Features [label="Provide Features to Data Science Team"]
+
+    Start -> Retrieve_Features
+    Retrieve_Features -> Provide_Features
+}

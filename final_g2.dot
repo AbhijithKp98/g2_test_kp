@@ -1,0 +1,74 @@
+digraph combined_flowchart {
+    node [shape=box, style=filled, fillcolor=lightblue]
+
+    subgraph cluster_overall {
+        label = "Overall Process"
+        Start [label="Start"]
+        Review_Collection [label="Review Collection"]
+        Text_Preprocessing [label="Text Preprocessing"]
+        Feature_Extraction [label="Feature Extraction"]
+        Data_Storage [label="Data Storage"]
+        API_Service [label="API Service"]
+        Data_Science_Team [label="Data Science Team"]
+
+        Start -> Review_Collection
+        Review_Collection -> Text_Preprocessing
+        Text_Preprocessing -> Feature_Extraction
+        Feature_Extraction -> Data_Storage
+        Data_Storage -> API_Service
+        API_Service -> Data_Science_Team
+    }
+
+    subgraph cluster_review_collection {
+        label = "Review Collection"
+        Fetch_Reviews [label="Fetch Reviews"]
+        Process_Reviews [label="Process Reviews"]
+        Store_Reviews [label="Store Processed Reviews"]
+
+        Review_Collection -> Fetch_Reviews
+        Fetch_Reviews -> Process_Reviews
+        Process_Reviews -> Store_Reviews
+    }
+
+    subgraph cluster_text_preprocessing {
+        label = "Text Preprocessing"
+        Clean_Text [label="Clean Text"]
+        Format_Text [label="Format Text"]
+        Parse_Text [label="Parse Text"]
+
+        Text_Preprocessing -> Clean_Text
+        Clean_Text -> Format_Text
+        Format_Text -> Parse_Text
+    }
+
+    subgraph cluster_feature_extraction {
+        label = "Feature Extraction"
+        Extract_Tokens [label="Extract Tokens"]
+        Extract_Tool_Mentions [label="Extract Tool Mentions"]
+        Extract_Location_Info [label="Extract Location Information"]
+        Extract_Other_Features [label="Extract Other Features"]
+
+        Feature_Extraction -> Extract_Tokens
+        Extract_Tokens -> Extract_Tool_Mentions
+        Extract_Tool_Mentions -> Extract_Location_Info
+        Extract_Location_Info -> Extract_Other_Features
+    }
+
+    subgraph cluster_data_storage {
+        label = "Data Storage"
+        Store_Processed_Reviews [label="Store Processed Reviews"]
+        Store_Features [label="Store Extracted Features"]
+
+        Data_Storage -> Store_Processed_Reviews
+        Data_Storage -> Store_Features
+    }
+
+    subgraph cluster_api_service {
+        label = "API Service"
+        Retrieve_Features [label="Retrieve Features"]
+        Provide_Features [label="Provide Features"]
+
+        API_Service -> Retrieve_Features
+        Retrieve_Features -> Provide_Features
+    }
+}

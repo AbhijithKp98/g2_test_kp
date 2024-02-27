@@ -1,0 +1,11 @@
+digraph data_storage {
+    node [shape=box, style=filled, fillcolor=lightblue]
+    rankdir=LR;
+
+    Start [label="Start"]
+    Store_Processed_Reviews [label="Store Processed Reviews"]
+    Store_Features [label="Store Extracted Features"]
+
+    Start -> Store_Processed_Reviews
+    Start -> Store_Features
+}

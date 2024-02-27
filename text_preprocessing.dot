@@ -1,0 +1,13 @@
+digraph text_preprocessing {
+    node [shape=box, style=filled, fillcolor=lightblue]
+    rankdir=LR;
+
+    Start [label="Start"]
+    Clean_Text [label="Clean Text (Remove Stop Words, Special Characters)"]
+    Format_Text [label="Format Text"]
+    Parse_Text [label="Parse Text"]
+
+    Start -> Clean_Text
+    Clean_Text -> Format_Text
+    Format_Text -> Parse_Text
+}

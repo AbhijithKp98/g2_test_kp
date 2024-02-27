@@ -1,0 +1,13 @@
+digraph review_collection {
+    node [shape=box, style=filled, fillcolor=lightblue]
+    rankdir=LR;
+
+    Start [label="Start"]
+    Fetch_Reviews [label="Fetch Reviews from G2 Website"]
+    Process_Reviews [label="Process Reviews"]
+    Store_Reviews [label="Store Processed Reviews"]
+
+    Start -> Fetch_Reviews
+    Fetch_Reviews -> Process_Reviews
+    Process_Reviews -> Store_Reviews
+}
