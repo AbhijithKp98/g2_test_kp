@@ -10,7 +10,7 @@ The system receives thousands of B2B software reviews on a weekly basis from var
 
 The system architecture consists of the following components:
 
-- **Review Collection**: Scrapes reviews from sources such as the G2 website.
+- **Review Collection**: Fetch reviews from sources & load it to s3 bucket(or equivalent FS).
 - **Text Preprocessing**: Cleans and formats the text data for further processing.
 - **Feature Extraction**: Extracts features such as tokens, tool mentions, and location information from the reviews.
 - **Data Storage**: Stores the processed reviews and extracted features in a database.
@@ -19,12 +19,12 @@ The system architecture consists of the following components:
 
 ## Technologies Used
 
-- **Scrapy**: For web scraping reviews from sources like the G2 website.(Incase we need to get into scraping the data)
 - **NLTK (Natural Language Toolkit)**: For text preprocessing tasks such as tokenization and stop words removal.(We can get into better sophisticated toolkits but for starters, this should be good)
 - **Apache Spark**: Distributed computing framework for scalable feature extraction.
 - **Spark NLP**: Natural Language Processing library for Apache Spark.
 - **MongoDB**: NoSQL database for storing processed reviews and extracted features.
 - **Elasticsearch**: Distributed search and analytics engine for storing and querying textual data.
+- **Airflow**: Will serve as our Orchestration/Automation tool .
 - **FastAPI**: Web framework for building high-performance APIs with Python.
 - **Jupyter Notebooks**: Interactive computing environments for data analysis and visualization. (Given Data Scientists/Business Analysts would need a simple interface to work with)
 
