@@ -27,3 +27,8 @@ The system architecture consists of the following components:
 - **Elasticsearch**: Distributed search and analytics engine for storing and querying textual data.
 - **FastAPI**: Web framework for building high-performance APIs with Python.
 - **Jupyter Notebooks**: Interactive computing environments for data analysis and visualization. (Given Data Scientists/Business Analysts would need a simple interface to work with)
+
+## Final Architecture Diagram
+
+
+![Architecture Diagram](final_g2.png)
